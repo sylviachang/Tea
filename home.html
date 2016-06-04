@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<title>Taiwan Tea | 茶の資訊磚</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="/bootstrap/bootstrap.css" rel="stylesheet">
+<link href="/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/cover.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!--top line-->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="home.html">台灣，茶</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li><a href="Author.html">關於我們</a></li>
+            <li class="active"><a href="home.html">茶の資訊磚</a></li>
+            <li><a href="Note.html">茶の小知識</a></li>
+            <li><a href="Share.html">茶の分享區</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--top line-->
+<p></p>
+<!--全部內容-->
+<div class="container">
+  <!--歡迎來到台灣茶-->
+  <div class="hero-unit">
+    <img src="/css/image/tea.png"/ class="span2">
+    <h1 class="span4">茶の資訊磚</h1>
+    <h3 class="span6"><hr>茶の資訊磚，遍佈全台的茶店相關資訊。<hr></h3>
+  </div>
+  <!--歡迎來到台灣茶-->
+
+  <!-- 資訊磚-->
+  <section class="row">     
+    {% for shop in shop_list %}
+    <div class="span4">
+      <a href="{{ shop.url }}">  
+        <h3>{{ shop.name }}</h3>
+        {% if shop.picture %}
+          <img src="{{ shop.picture }}"/>
+        {% else %}
+          <img src="/css/image/tea.png"/>
+        {% endif %}
+        <pre>{{ shop.content }}</pre> 
+      </a>
+    </div>
+    {% endfor %}
+  </section>
+  <!-- 資訊磚-->
+</div>
+<!--全部內容-->
+
+<footer>
+  &copy; Share Taiwan Tea by Team  張詠淳  黃尹  黃國維  張嘉君
+</footer>
+
+</body></html>
